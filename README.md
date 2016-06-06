@@ -1,9 +1,9 @@
 [ ![Download](https://api.bintray.com/packages/dan-silver/maven/microsoft-graph-pickers/images/download.svg) ](https://bintray.com/dan-silver/maven/microsoft-graph-pickers/_latestVersion)
 
-# microsoft-graph-android-pickers
+# Microsoft Graph Android Pickers
 This is an unofficial community project that is not endorsed by Microsoft.
 
-Easy way to get data from the Microsoft Graph into your app using pickers to find users, files and more.
+This library is an easy way to let users get data from the Microsoft Graph into your app using pickers to find users, files and more.
 
 <img src="https://github.com/dan-silver/microsoft-graph-android-pickers/raw/master/resources/file-search.gif" alt="file picker animation" width="300">
 
@@ -71,9 +71,9 @@ Requires at least the ```Mail.Read``` permission.
 ```java
 // create the search intent
 // then launch with startActivityForResult()
-    GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
-    builder.setSearchPlaceholderText("Search email...");
-    startActivityForResult(builder.build(context), REQUEST_CODE_FIND_MESSAGE);
+GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
+builder.setSearchPlaceholderText("Search email...");
+startActivityForResult(builder.build(context), REQUEST_CODE_FIND_MESSAGE);
 
 
 // capture results in onActivityResult()
