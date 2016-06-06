@@ -55,13 +55,34 @@ builder.setShowFileExtensions(true); //optional
 startActivityForResult(builder.build(context), REQUEST_CODE_FIND_USER);
 
 // capture results in onActivityResult()
-
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (resultCode == Activity.RESULT_OK) {
         if (requestCode == REQUEST_CODE_FIND_FILE) {
             DriveItem file = GraphFileSearch.getFile(data);
-            Toast.makeText(getApplicationContext(), file.name, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, file.name, Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+```
+
+### Mail search
+Requires at least the ```Mail.Read``` permission.
+```java
+// create the search intent
+// then launch with startActivityForResult()
+    GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
+    builder.setSearchPlaceholderText("Search email...");
+    startActivityForResult(builder.build(context), REQUEST_CODE_FIND_MESSAGE);
+
+
+// capture results in onActivityResult()
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (resultCode == Activity.RESULT_OK) {
+        if (requestCode == REQUEST_CODE_FIND_MESSAGE) {
+            Message msg = GraphMailSearch.getMessage(data);
+            Toast.makeText(context, msg.subject, Toast.LENGTH_SHORT).show();
         }
     }
 }
