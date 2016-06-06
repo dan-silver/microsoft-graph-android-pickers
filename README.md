@@ -24,7 +24,7 @@ GraphPickerLib.init(mClient);
 
 
 ### User search
-Requires the ```User.ReadBasic.All``` permission.
+Requires at least the ```User.ReadBasic.All``` permission.
 ```java
 // create the search intent
 // then launch with startActivityForResult()
@@ -46,7 +46,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 
 ### OneDrive file search
-Requires the ```Files.Read``` permission.
+Requires at least the ```Files.Read``` permission.
 ```java
 // create the search intent
 // then launch with startActivityForResult()
@@ -95,6 +95,8 @@ Use the builder factory to customize the search page. The following options are 
 
 ```java
 builder.setSearchPlaceholderText("Search for users in your organization");
+builder.setSearchPlaceholderText(R.string.localized_string); // or set with a resource
+
 builder.setOpenKeyboardByDefault(false);
 builder.setDefaultIcon(R.mipmap.custom_image); // shown if user picture not found, unknown file extension, etc.
 builder.setDebounceTime(250); // delay in milliseconds between keystrokes before search is processed
