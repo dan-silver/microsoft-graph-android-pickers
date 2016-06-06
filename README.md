@@ -70,7 +70,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
 ## Options
-Use the builder factory to customize the search page. All the following options are available on all builder types.
+Use the builder factory to customize the search page. The following options are available on all builder types.
 
 ```java
 builder.setSearchPlaceholderText("Search for users in your organization");
