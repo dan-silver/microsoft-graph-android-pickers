@@ -89,6 +89,7 @@ public class GraphUserSearch extends GraphSearchActivity {
 
         @Override
         protected void init() {
+            setOpenKeyboardByDefault(true);
             setDefaultIcon(R.drawable.graphpickers__ic_person_black_24dp); // can still be set by user
         }
 

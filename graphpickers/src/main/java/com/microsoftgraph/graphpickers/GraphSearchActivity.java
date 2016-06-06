@@ -23,7 +23,7 @@ abstract public class GraphSearchActivity extends AppCompatActivity implements S
 
     protected int debouneTime;
     protected String searchPlaceholderText;
-    protected boolean openKeyboardByDefault = true;
+    protected boolean openKeyboardByDefault;
     protected int defaultIcon = -1;
 
 

@@ -33,11 +33,6 @@ public class FileSearchListAdapter extends SearchListAdapter<DriveItem, FileSear
     }
 
     @Override
-    public boolean itemsAreSame(DriveItem a, DriveItem b) {
-        return a.id.equals(b.id);
-    }
-
-    @Override
     public void onBindViewHolder(final FileViewHolder holder, int position) {
         final DriveItem model = mDataset.get(position);
 

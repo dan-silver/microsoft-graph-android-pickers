@@ -5,13 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.microsoft.graph.generated.BaseEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by dan on 6/4/16.
  */
-public abstract class SearchListAdapter<Model, CustomViewHolder extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<CustomViewHolder> {
+public abstract class SearchListAdapter<Model extends BaseEntity, CustomViewHolder extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<CustomViewHolder> {
     protected List<Model> mDataset;
 
     public abstract int getModelRowLayout();
@@ -32,6 +34,9 @@ public abstract class SearchListAdapter<Model, CustomViewHolder extends Recycler
 
     public abstract CustomViewHolder getNewViewHolder(View v);
 
+    protected boolean itemsAreSame(Model a, Model b) {
+        return a.id.equals(b.id);
+    }
 
     public void setModels(List<Model> newModels) {
         mDataset = new ArrayList<>(newModels);
@@ -72,8 +77,6 @@ public abstract class SearchListAdapter<Model, CustomViewHolder extends Recycler
         }
         return -1;
     }
-
-    public abstract boolean itemsAreSame(Model a, Model b);
 
     private void applyAndAnimateRemovals(List<Model> newModels) {
         for (int i = mDataset.size() - 1; i >= 0; i--) {

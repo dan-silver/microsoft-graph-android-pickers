@@ -10,7 +10,7 @@ import android.content.Intent;
 public abstract class IntentBuilder {
     private int debounceTime = 300;
     private String placeholderText;
-    private boolean openKeyboardByDefault = true;
+    private boolean openKeyboardByDefault = false;
     private int defaultIcon = -1;
 
     public IntentBuilder() {
@@ -22,7 +22,6 @@ public abstract class IntentBuilder {
         Intent intent = new Intent(context, getSearchClass());
 
         addSearchSpecificExtras(intent);
-
 
         intent.putExtra(GraphSearchActivity.DEBOUNCE_TIME, debounceTime);
         intent.putExtra(GraphSearchActivity.SEARCH_PLACEHOLDER, placeholderText);

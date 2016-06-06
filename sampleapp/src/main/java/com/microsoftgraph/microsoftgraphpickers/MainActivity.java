@@ -16,14 +16,17 @@ import com.microsoft.graph.core.IClientConfig;
 import com.microsoft.graph.extensions.DriveItem;
 import com.microsoft.graph.extensions.GraphServiceClient;
 import com.microsoft.graph.extensions.IGraphServiceClient;
+import com.microsoft.graph.extensions.Message;
 import com.microsoft.graph.extensions.User;
 import com.microsoftgraph.graphpickers.GraphFileSearch;
+import com.microsoftgraph.graphpickers.GraphMailSearch;
 import com.microsoftgraph.graphpickers.GraphPickerLib;
 import com.microsoftgraph.graphpickers.GraphUserSearch;
 
 public class MainActivity extends AppCompatActivity {
     public static int REQUEST_CODE_FIND_USER = 1;
     public static int REQUEST_CODE_FIND_FILE = 2;
+    public static int REQUEST_CODE_FIND_MESSAGE = 3;
 
     public static IGraphServiceClient mClient;
     public static MSAAuthAndroidAdapter authenticationAdapter;
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (requestCode == REQUEST_CODE_FIND_FILE) {
                 DriveItem file = GraphFileSearch.getFile(data);
                 Toast.makeText(getApplicationContext(), getString(R.string.found_file, file.name), Toast.LENGTH_SHORT).show();
+            } else if (requestCode == REQUEST_CODE_FIND_MESSAGE) {
+                Message msg = GraphMailSearch.getMessage(data);
+                Toast.makeText(getApplicationContext(), getString(R.string.found_item, msg.subject), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -68,9 +74,23 @@ public class MainActivity extends AppCompatActivity {
                     GraphFileSearch.IntentBuilder builder = new GraphFileSearch.IntentBuilder();
                     builder.setDebounceTime(250);
                     builder.setSearchPlaceholderText("Find files...");
-                    builder.setOpenKeyboardByDefault(false);
                     builder.setShowFileExtensions(true);
                     startActivityForResult(builder.build(getApplicationContext()), REQUEST_CODE_FIND_FILE);
+                }
+            });
+        }
+
+
+        Button btnMailSearch = (Button) findViewById(R.id.search_mail_btn);
+        if (btnMailSearch != null) {
+            btnMailSearch.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
+                    builder.setSearchPlaceholderText("Search email...");
+                    builder.setOpenKeyboardByDefault(false);
+                    startActivityForResult(builder.build(getApplicationContext()), REQUEST_CODE_FIND_MESSAGE);
                 }
             });
         }
@@ -86,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 return new String[] {
                         "https://graph.microsoft.com/User.ReadBasic.All",
                         "https://graph.microsoft.com/Files.Read",
+                        "https://graph.microsoft.com/Mail.Read",
                 };
             }
         };

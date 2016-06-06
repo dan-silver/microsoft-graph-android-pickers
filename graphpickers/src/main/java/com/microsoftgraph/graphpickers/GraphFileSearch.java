@@ -108,8 +108,8 @@ public class GraphFileSearch extends GraphSearchActivity {
     }
 
     public static DriveItem getFile(Intent data) {
-        String userJSON = data.getStringExtra("file");
-        return new DefaultSerializer(new DefaultLogger()).deserializeObject(userJSON, DriveItem.class);
+        String jsonStr = data.getStringExtra("file");
+        return new DefaultSerializer(new DefaultLogger()).deserializeObject(jsonStr, DriveItem.class);
     }
 
     public static class IntentBuilder extends com.microsoftgraph.graphpickers.IntentBuilder {

@@ -31,7 +31,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/graphpickers__secondary_header"
-            android:id="@+id/header_secondary"/>
+            android:id="@+id/header_secondary"
+            android:maxLines="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/header_tertiary"
+            android:maxLines="1"/>
 
     </LinearLayout>
 

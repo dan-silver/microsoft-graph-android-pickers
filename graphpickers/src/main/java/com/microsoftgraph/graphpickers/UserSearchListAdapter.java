@@ -43,11 +43,6 @@ public class UserSearchListAdapter extends SearchListAdapter<User, UserSearchLis
     }
 
     @Override
-    public boolean itemsAreSame(User a, User b) {
-        return a.id.equals(b.id);
-    }
-
-    @Override
     public void onBindViewHolder(final UserViewHolder holder, int position) {
         final User user = mDataset.get(position);
         holder.tvDisplayName.setText(user.displayName);
