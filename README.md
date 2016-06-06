@@ -15,9 +15,6 @@ dependencies {
     compile 'msgraph.pickers:graphpickers:1.0.25'
 }
 
-```
-
-```java
 // initialize the library with a GraphServiceClient
 // follow official Microsoft documentation at https://github.com/microsoftgraph/msgraph-sdk-android
 
