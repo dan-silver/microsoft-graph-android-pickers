@@ -8,13 +8,9 @@ Simple android components to find users, files, and more in the Microsoft Graph.
 ## Install
 
 ```gradle
-// add the following to your build.gradle file
+// add the following to your build.gradle file to get the package from jCenter
 dependencies {
-    compile 'msgraph.pickers:graphpickers:1.0-beta8'
-}
-
-maven {
-    url 'https://dl.bintray.com/dan-silver/maven/'
+    compile 'msgraph.pickers:graphpickers:1.0.25'
 }
 
 ```
