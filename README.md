@@ -26,7 +26,7 @@ GraphPickerLib.init(mClient);
 
 
 
-### User Search
+### User search
 Requires the ```User.ReadBasic.All``` permission.
 ```java
 // create the search intent
