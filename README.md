@@ -71,9 +71,9 @@ Requires at least the ```Mail.Read``` permission.
 ```java
 // create the search intent
 // then launch with startActivityForResult()
-    GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
-    builder.setSearchPlaceholderText("Search email...");
-    startActivityForResult(builder.build(context), REQUEST_CODE_FIND_MESSAGE);
+GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
+builder.setSearchPlaceholderText("Search email...");
+startActivityForResult(builder.build(context), REQUEST_CODE_FIND_MESSAGE);
 
 
 // capture results in onActivityResult()
