@@ -5,8 +5,12 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-        <activity android:name=".GraphUserSearch"/>
-        <activity android:name=".GraphFileSearch"/>
+        <activity
+            android:name=".GraphUserSearch"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".GraphFileSearch"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
     </application>
 
 </manifest>
