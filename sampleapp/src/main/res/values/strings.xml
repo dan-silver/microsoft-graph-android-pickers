@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sample Application</string>
+    <string name="found_user">Found user %s</string>
+    <string name="found_file">Found file %s</string>
+</resources>
