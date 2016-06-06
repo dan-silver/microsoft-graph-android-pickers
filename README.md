@@ -1,6 +1,6 @@
 [ ![Download](https://api.bintray.com/packages/dan-silver/maven/microsoft-graph-pickers/images/download.svg) ](https://bintray.com/dan-silver/maven/microsoft-graph-pickers/_latestVersion)
 
-# microsoft-graph-android-pickers
+# Microsoft Graph Android Pickers
 This is an unofficial community project that is not endorsed by Microsoft.
 
 This library is an easy way to let users get data from the Microsoft Graph into your app using pickers to find users, files and more.
