@@ -5,6 +5,8 @@ This is an unofficial community project that is not endorsed by Microsoft.
 
 Simple android components to find users, files, and more in the Microsoft Graph.
 
+<img src="https://github.com/dan-silver/microsoft-graph-android-pickers/raw/master/resources/file-search.gif" alt="file picker animation" width="300">
+
 ## Install
 
 ```gradle
