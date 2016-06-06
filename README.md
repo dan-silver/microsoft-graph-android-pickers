@@ -3,8 +3,6 @@
 # microsoft-graph-android-pickers
 This is an unofficial community project that is not endorsed by Microsoft.
 
-Easy way to get data from the Microsoft Graph into your app using pickers to find users, files and more.
-
 <img src="https://github.com/dan-silver/microsoft-graph-android-pickers/raw/master/resources/file-search.gif" alt="file picker animation" width="300">
 
 ## Install
