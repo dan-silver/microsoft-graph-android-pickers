@@ -24,7 +24,7 @@ GraphPickerLib.init(mClient);
 
 
 ### User search
-Requires the ```User.ReadBasic.All``` permission.
+Requires at least the ```User.ReadBasic.All``` permission.
 ```java
 // create the search intent
 // then launch with startActivityForResult()
@@ -46,7 +46,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 
 ### OneDrive file search
-Requires the ```Files.Read``` permission.
+Requires at least the ```Files.Read``` permission.
 ```java
 // create the search intent
 // then launch with startActivityForResult()
