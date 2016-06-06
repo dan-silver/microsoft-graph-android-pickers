@@ -122,7 +122,7 @@ public class GraphFileSearch extends GraphSearchActivity {
 
         @Override
         protected void init() {
-
+            setSearchPlaceholderText(R.string.graphpickers__search_for_files);
         }
 
         public void setShowFileExtensions(boolean showFileExtensions) {

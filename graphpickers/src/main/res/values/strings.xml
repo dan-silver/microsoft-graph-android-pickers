@@ -1,7 +1,9 @@
 <resources>
     <string name="graphpickers__app_name">MicrosoftGraphPickers</string>
     <string name="graphpickers__user_photo">User photo</string>
-    <string name="graphpickers__search_for_users">Search…</string>
+    <string name="graphpickers__search_for_email">Search for email…</string>
+    <string name="graphpickers__search_for_files">Search for files…</string>
+    <string name="graphpickers__search_for_users">Search for users…</string>
     <string name="graphpickers__last_modified">"Last modified %s"</string>
     <string name="graphpickers__primary_header">Primary header</string>
     <string name="graphpickers__secondary_header">Secondary header</string>

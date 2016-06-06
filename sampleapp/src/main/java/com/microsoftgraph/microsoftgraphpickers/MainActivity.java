@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     GraphUserSearch.IntentBuilder builder = new GraphUserSearch.IntentBuilder();
                     builder.setDebounceTime(250);
-                    builder.setSearchPlaceholderText("Find users...");
                     startActivityForResult(builder.build(getApplicationContext()), REQUEST_CODE_FIND_USER);
                 }
             });
@@ -73,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     GraphFileSearch.IntentBuilder builder = new GraphFileSearch.IntentBuilder();
                     builder.setDebounceTime(250);
-                    builder.setSearchPlaceholderText("Find files...");
                     builder.setShowFileExtensions(true);
                     startActivityForResult(builder.build(getApplicationContext()), REQUEST_CODE_FIND_FILE);
                 }
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     GraphMailSearch.IntentBuilder builder = new GraphMailSearch.IntentBuilder();
-                    builder.setSearchPlaceholderText("Search email...");
+                    builder.setSearchPlaceholderText("Search email custom label...");
                     builder.setOpenKeyboardByDefault(false);
                     startActivityForResult(builder.build(getApplicationContext()), REQUEST_CODE_FIND_MESSAGE);
                 }

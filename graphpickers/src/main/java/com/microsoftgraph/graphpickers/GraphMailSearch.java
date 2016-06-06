@@ -57,7 +57,7 @@ public class GraphMailSearch extends GraphSearchActivity {
 
     public void getContent(String query) {
         String path = "https://graph.microsoft.com/v1.0/me/mailFolders/Inbox/messages";
-        
+
         MessageCollectionRequest request = new MessageCollectionRequest(path, GraphPickerLib.getClient(), new ArrayList<Option>());
 
         if (query != null && query.length() > 0) {
@@ -95,7 +95,7 @@ public class GraphMailSearch extends GraphSearchActivity {
 
         @Override
         protected void init() {
-
+            setSearchPlaceholderText(R.string.graphpickers__search_for_email);
         }
 
         @Override

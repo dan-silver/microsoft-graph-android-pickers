@@ -12,6 +12,7 @@ public abstract class IntentBuilder {
     private String placeholderText;
     private boolean openKeyboardByDefault = false;
     private int defaultIcon = -1;
+    private int placeholderTextResId = -1;
 
     public IntentBuilder() {
         init();
@@ -24,8 +25,13 @@ public abstract class IntentBuilder {
         addSearchSpecificExtras(intent);
 
         intent.putExtra(GraphSearchActivity.DEBOUNCE_TIME, debounceTime);
-        intent.putExtra(GraphSearchActivity.SEARCH_PLACEHOLDER, placeholderText);
         intent.putExtra(GraphSearchActivity.OPENKEYBOARD, openKeyboardByDefault);
+
+        if (placeholderText != null) {
+            intent.putExtra(GraphSearchActivity.SEARCH_PLACEHOLDER, placeholderText);
+        } else if (placeholderTextResId != -1) {
+            intent.putExtra(GraphSearchActivity.SEARCH_PLACEHOLDER, context.getString(placeholderTextResId));
+        }
 
         if (defaultIcon != -1) {
             intent.putExtra(GraphSearchActivity.DEFAULT_ICON, defaultIcon);
@@ -46,6 +52,10 @@ public abstract class IntentBuilder {
 
     public void setSearchPlaceholderText(String text) {
         this.placeholderText = text;
+    }
+
+    public void setSearchPlaceholderText(int resId) {
+        this.placeholderTextResId = resId;
     }
 
     public void setDefaultIcon(int res) {
