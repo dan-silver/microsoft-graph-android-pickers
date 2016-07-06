@@ -101,3 +101,9 @@ builder.setOpenKeyboardByDefault(false);
 builder.setDefaultIcon(R.mipmap.custom_image); // shown if user picture not found, unknown file extension, etc.
 builder.setDebounceTime(250); // delay in milliseconds between keystrokes before search is processed
 ```
+
+## Running the sample application
+Register your app in the app registration portal and create a string resource with the name `appId`. I recommend adding the following line in secrets.xml which is already listed in .gitignore.
+```
+<string name="appId">INSERT_YOUR_APP_ID_HERE</string>
+```
